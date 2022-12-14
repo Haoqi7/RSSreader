@@ -1,0 +1,171 @@
+# model
+
+- feed:
+  - title
+
+    rdf>channel>title (rss 0.90)
+    rdf>channel>title (rss 1.0)
+    rss>channel>title (rss 0.91 netscape)
+    rss>channel>title (rss 0.91 userland)
+    rss>channel>title (rss 2.0)
+    feed>title        (atom 1.0)
+
+  - site_url
+
+    rdf>channel>link (rss 0.90)
+    rdf>channel>link (rss 1.0)
+    rss>channel>link (rss 0.91 netscape)
+    rss>channel>link (rss 0.91 userland)
+    rss>channel>link (rss 2.0)
+    feed>link        (atom 1.0)
+
+- item:
+  - guid
+
+    rss>channel>guid (rss 2.0)
+    feed>entry>id    (atom 1.0)
+
+  - date
+
+    rdf>item>dc:date     (rss 1.0)
+    rss>channel>pubDate  (rss 2.0)
+    feed>entry>updated   (atom 1.0)
+    feed>entry>published (atom 1.0)
+
+  - url
+
+    rdf>item>link                  (rss 0.90)
+    rdf>item>link                  (rss 1.0)
+    rss>channel>item>link          (rss 0.91 netscape)
+    rss>channel>item>link          (rss 0.91 userland)
+    rss>channel>item>link          (rss 2.0)
+    feed>entry>link[rel=alternate] (atom 1.0)
+
+  - title
+
+    rdf>item>title         (rss 0.90)
+    rdf>item>title         (rss 1.0)
+    rss>channel>item>title (rss 0.91 netscape)
+    rss>channel>item>title (rss 0.91 userland)
+    rss>channel>item>title (rss 2.0)
+    feed>entry>title       (atom 1.0)
+
+  - content
+
+    rss>channel>item>description (rss 0.91 netscape)
+    rss>channel>item>description (rss 0.91 userland)
+    rss>channel>item>description (rss 2.0)
+    rdf>item>description         (rss 1.0)
+    rdf>item>content:encoded     (rss 1.0)
+    feed>entry>content           (atom 1.0)
+
+  - image_url
+
+    rss>item>media:thumbnail:url (rss 2.0 media)
+    feed>entry>enclosure[rel='image/*'] (atom 1.0) ???
+
+  - audio_url
+
+    rss>item>enclosure:url (audio/*)  (rss 2.0)
+    feed>entry>enclosure   (audio/*') (atom 1.0) ???
+
+# specs
+
+- rss
+  https://en.wikipedia.org/wiki/RSS
+  - 0.90:
+    https://www.rssboard.org/rss-0-9-0
+    https://web.archive.org/web/20001208063100/http://my.netscape.com/publish/help/quickstart.html
+  - 0.91 (netscape)
+    https://www.rssboard.org/rss-0-9-1-netscape
+  - 0.91 (userland)
+    https://www.rssboard.org/rss-0-9-1
+  - 0.92
+    https://www.rssboard.org/rss-0-9-2
+    by userland, no significant changes from 0.91
+  - 0.93 (withdrawn)
+    http://backend.userland.com/rss093
+  - 0.94 (withdrawn)
+  - 1.0
+    https://web.resource.org/rss/1.0/
+    https://web.archive.org/web/20021014094554/https://web.resource.org/rss/1.0/spec
+    reintroduced rdf from 0.90, added dublincore namespaces etc
+    namespaces:
+        content: http://purl.org/rss/1.0/modules/content/
+        dc: http://purl.org/dc/elements/1.1/
+  - 2.0
+    https://cyber.harvard.edu/rss/rss.html
+    https://www.rssboard.org/rss-2-0
+
+- atom
+  https://en.wikipedia.org/wiki/Atom_(Web_standard)
+  - 0.3
+    https://support.google.com/merchants/answer/160598?hl=en
+    http://web.archive.org/web/20060811235523/http://www.mnot.net/drafts/draft-nottingham-atom-format-02.html
+  - 1.0
+    https://tools.ietf.org/html/rfc4287
+    https://validator.w3.org/feed/docs/atom.html
+
+- json
+  https://en.wikipedia.org/wiki/JSON_Feed
+  - 1.0
+    https://jsonfeed.org/version/1
+  - 1.1
+    https://jsonfeed.org/version/1.1
+
+- media
+  https://www.rssboard.org/media-rss
+  xml namespace for:
+  - rss 2.0
+  - atom 1.0
+
+# extensions
+
+- feedburner
+  https://en.wikipedia.org/wiki/FeedBurner
+
+- media
+  https://www.rssboard.org/media-rss
+  initially for rss 2.0, used in atom 1.0 as well (youtube)
+
+- itunes podcasts
+  https://help.apple.com/itc/podcasts_connect/#/itcb54353390
+  https://github.com/simplepie/simplepie-ng/wiki/Spec:-iTunes-Podcast-RSS
+
+- google podcasts
+  https://support.google.com/podcast-publishers/answer/9889544?visit_id=637523492443301715-1225759684&rd=1
+
+# parsers
+
+https://github.com/kurtmckee/feedparser
+https://github.com/mmcdole/gofeed
+https://github.com/miniflux/v2/tree/2.0.28/reader/
+https://github.com/Ranchero-Software/RSParser
+https://github.com/feederco/feeder-parser
+
+https://github.com/mmcdole/gofeed/commit/9665eb31016cef3d15ab85574bc6fdbe890cd252
+
+# platforms
+
+A list of centralized content providers worth keeping track of.
+The parser should be reasonably handle content provided by them.
+Delete any from the list in case they drop support of web feeds.
+
+- blogger
+- cnblogs
+- flickr
+- hatenablog
+- livejournal
+- medium
+- posthaven
+- reddit
+- substack
+- tumblr
+- vimeo
+- wordpress
+- youtube
+
+# links
+
+https://indieweb.org/feed#Criticism
+https://inessential.com/2013/03/18/brians_stupid_feed_tricks
