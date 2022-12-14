@@ -10,7 +10,7 @@ It is written in Go with the frontend in Vue.js. The storage is backed by SQLite
 ## usage
 
 The latest prebuilt binaries for Linux/MacOS/Windows are available
-[here](https://github.com/nkanaev/yarr/releases/latest).
+[here](https://github.com/haoqi7/webrss/releases/latest).
 
 ### macos
 
